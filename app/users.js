@@ -38,7 +38,7 @@ class Users extends React.Component {
     }// render end
 }
 
-// Makes the list required and always expect an array when you try to use it.
+// Makes the list required and always expect an Array of Objects, the first property need to be a String and the second a Boolean when you try to use it.
 
 Users.propTypes = {
     list: PropTypes.arrayOf(PropTypes.shape({
