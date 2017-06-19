@@ -41,7 +41,10 @@ class Users extends React.Component {
 // Makes the list required and always expect an array when you try to use it.
 
 Users.propTypes = {
-    list: PropTypes.array.isRequired
+    list: PropTypes.arrayOf(PropTypes.shape({
+        name: PropTypes.string.isRequired,
+        friend: PropTypes.bool.isRequired
+    }))
 }
 
 ReactDOM.render(
