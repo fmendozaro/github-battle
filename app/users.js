@@ -22,17 +22,15 @@ class Users extends React.Component {
                 <h1>Friends</h1>
                 <ul>
                     {friends.map(function (friend){
-                        return <li>{friend.name}</li>
-                    })};
+                        return <li key={friend.name}>{friend.name}</li>
+                    })}
                 </ul>
-
-                <hr />
-
+                <hr size={10} color="black"/>
                 <h1> Non Friends </h1>
                 <ul>
                     {nonFriends.map(function (friendWho){
-                        return <li>{friendWho.name}</li>
-                    })};
+                        return <li key={friendWho.name}>{friendWho.name}</li>
+                    })}
                 </ul>
             </div>
         )
@@ -42,7 +40,7 @@ class Users extends React.Component {
 
 // Makes the list required and always expect an array when you try to use it.
 
-User.propTypes = {
+Users.propTypes = {
     list: PropTypes.array.isRequired
 }
 
