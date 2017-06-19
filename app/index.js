@@ -6,7 +6,7 @@ class App extends React.Component{
 	render(){
 		return (
 			<div>
-				Howdy World!
+				Howdy {this.props.name}!
 				<p>This is some react training</p>
 			</div>
 		);
@@ -14,6 +14,6 @@ class App extends React.Component{
 }
 
 ReactDom.render(
-	<App />,
+	<App name="Fer"/>,
 	document.getElementById('app')
 );
