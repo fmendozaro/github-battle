@@ -1,6 +1,7 @@
 var React = require('react');
 var ReactDom = require('react-dom');
 require('./index.css');
+require('./components/App');
 
 class App extends React.Component{
 	render(){
