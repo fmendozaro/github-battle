@@ -3,7 +3,7 @@
  */
 var React = require('react');
 
-class Popular extends React.component{
+class Popular extends React.Component{
 
     constructor(props){
         super(props);
@@ -24,7 +24,8 @@ class Popular extends React.component{
 
     render(){
 
-        var langs = ['All', 'Javascript', 'Ruby', 'Css', 'Python'];
+        var langs = ['All', 'Javascript', 'PHP', 'CSS', 'Java'];
+
         return (
             <ul className="languages">
                 {
@@ -33,6 +34,7 @@ class Popular extends React.component{
                             <li
                                 key={lang}
                                 onClick={this.updateLang.bind(null, lang)}
+                                style={lang === this.state.selectedLanguage ? {color: 'red'} : null}
                             >
                                 {lang}
                             </li>
