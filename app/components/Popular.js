@@ -2,6 +2,35 @@
  * Created by fer on 7/4/17.
  */
 var React = require('react');
+var PropTypes = require('prop-types');
+
+function SelectLanguage(props){
+    var langs = ['All', 'PHP', 'Java', 'Javascript', 'CSS'];
+    return(
+        <ul className="languages">
+            {
+                langs.map(function (lang){
+                    return(
+                        <li
+                            key={lang}
+                            onClick={props.onSelect.bind(null, lang)}
+                            style={lang === props.selectedLanguage ? {color: 'red'} : null}
+                        >
+                            {lang}
+                        </li>
+                    )
+                })
+                // This second parameter is to specify the context
+            }
+        </ul>
+    )
+}
+
+// PropTypes restrictions
+SelectLanguage.propTypes = {
+    selectedLanguage: PropTypes.string.isRequired,
+    onSelect: PropTypes.func.isRequired
+}
 
 class Popular extends React.Component{
 
@@ -23,26 +52,13 @@ class Popular extends React.Component{
     }
 
     render(){
-
-        var langs = ['All', 'PHP', 'Java', 'Javascript', 'CSS'];
-
         return (
-            <ul className="languages">
-                {
-                    langs.map(function (lang){
-                        return(
-                            <li
-                                key={lang}
-                                onClick={this.updateLang.bind(null, lang)}
-                                style={lang === this.state.selectedLanguage ? {color: 'red'} : null}
-                            >
-                                {lang}
-                            </li>
-                        )
-                    }, this)
-                    // This second parameter is to specify the context
-                }
-            </ul>
+            <div>
+                <SelectLanguage
+                    selectedLanguage={this.state.selectedLanguage}
+                    onSelect={this.updateLang}
+                />
+            </div>
         )
     }
 }

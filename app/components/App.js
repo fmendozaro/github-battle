@@ -7,7 +7,7 @@ var Popular = require('./Popular');
 // Adding an example of a Stateless functional component
 function Welcome(props){
     return (
-        <div>Welcome, {props.username}!</div>
+        <span>Welcome, {props.username}!</span>
     )
 }
 
@@ -16,7 +16,7 @@ class App extends React.Component{
         return (
             <div className="container">
                 <Welcome username="Fer" />
-                <Popular/>
+                <Popular />
             </div>
         )
     }
