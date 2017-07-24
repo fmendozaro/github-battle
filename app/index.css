@@ -7,6 +7,8 @@ body{
 	margin: 0 auto;
 }
 
+/* Popular page */
+
 ul{
     padding: 0;
 }
@@ -26,4 +28,29 @@ li{
     font-size: 20px;
     cursor: pointer;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.popular-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.popular-item{
+    margin:20px;
+    text-align: center;
+}
+
+.space-list-items{
+    margin-bottom: 7px;
+}
+
+.avatar{
+    width: 150px;
+    border-radius: 50%;
+}
+
+.popular-rank{
+    font-size: 20px;
+    margin: 10px;
 }
