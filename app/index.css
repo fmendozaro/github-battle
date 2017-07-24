@@ -17,6 +17,11 @@ li{
     list-style-type: none;
 }
 
+a{
+    text-decoration: none;
+    color: navy;
+}
+
 .languages{
     display: flex;
     justify-content: center;
@@ -53,4 +58,35 @@ li{
 .popular-rank{
     font-size: 20px;
     margin: 10px;
+}
+
+.nav{
+    display: flex;
+}
+
+.active{
+    font-weight: bold;
+}
+
+.nav li{
+    margin-right: 15px;
+}
+
+.home-container{
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+}
+
+.button{
+    color: aliceblue;
+    background-color: black;
+    border: none;
+    font-size: 16px;
+    border-radius: 3px;
+    width: 250px;
+    text-align: center;
+    display: block;
+    padding: 7px 0;
+    margin: 10px auto;
 }
