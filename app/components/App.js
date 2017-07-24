@@ -8,6 +8,7 @@ var Router = ReactRouter.BrowserRouter;
 var Route = ReactRouter.Route;
 var Nav = require("./Nav");
 var Home = require("./Home");
+var Battle = require("./Battle");
 
 // Adding an example of a Stateless functional component
 function Welcome(props){
@@ -24,6 +25,7 @@ class App extends React.Component{
                     <Welcome username="Fer" />
                     <Nav />
                     <Route exact path="/" component={Home} />
+                    <Route path="/battle" component={Battle} />
                     <Route path="/popular" component={Popular} />
                 </div>
             </Router>
