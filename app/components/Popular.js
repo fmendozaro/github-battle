@@ -24,7 +24,7 @@ class Popular extends React.Component{
 
     render(){
 
-        var langs = ['All', 'Javascript', 'PHP', 'CSS', 'Java'];
+        var langs = ['All', 'PHP', 'Java', 'Javascript', 'CSS'];
 
         return (
             <ul className="languages">
