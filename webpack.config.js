@@ -3,8 +3,8 @@ var HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
 	entry: {
-		index: "./app/index.js",
-		users: "./app/users.js"
+		index: "./app/index.js"
+		// users: "./app/users.js"
 	},
 	output: {
 		path: path.resolve(__dirname, "dist"),
@@ -24,5 +24,8 @@ module.exports = {
     plugins: [
 		new HtmlWebpackPlugin({
             template: "app/index.html"
-        })]
+        })],
+    externals: {
+		"Config": JSON.stringify(require("./config.json"))
+	}
 }
