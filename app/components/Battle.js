@@ -122,47 +122,49 @@ class Battle extends React.Component{
         var match = this.props.match;
 
         return(
-            <div className="row">
-                {!p1Name &&
-                <PlayerInput
-                    id="playerOne"
-                    label="Player One"
-                    onSubmit={this.handleSubmit}
-                />}
-
-                {p1Img !== null &&
-                    <PlayerPreview
-                        avatar={p1Img}
-                        username={p1Name}
-                        onReset={this.handleReset}
+            <div>
+                <div className="row">
+                    {!p1Name &&
+                    <PlayerInput
                         id="playerOne"
+                        label="Player One"
+                        onSubmit={this.handleSubmit}
                     />}
 
-                {p2Img !== null &&
-                    <PlayerPreview
-                        avatar={p2Img}
-                        username={p2Name}
-                        onReset={this.handleReset}
-                    id="PlayerTwo"
+                    {p1Img !== null &&
+                        <PlayerPreview
+                            avatar={p1Img}
+                            username={p1Name}
+                            onReset={this.handleReset}
+                            id="playerOne"
+                        />}
+
+                    {p2Img !== null &&
+                        <PlayerPreview
+                            avatar={p2Img}
+                            username={p2Name}
+                            onReset={this.handleReset}
+                        id="PlayerTwo"
+                        />}
+
+                    {!p2Name &&
+                    <PlayerInput
+                        id="playerTwo"
+                        label="Player Two"
+                        onSubmit={this.handleSubmit}
                     />}
-
-                {!p2Name &&
-                <PlayerInput
-                    id="playerTwo"
-                    label="Player Two"
-                    onSubmit={this.handleSubmit}
-                />}
-
-                {p1Img && p2Img &&
+                </div>
+                <div>
+                    {p1Img && p2Img &&
                     <Link
-                      className="button"
-                      to={{
-                          pathname: match.url + "/results",
-                          search: "?playerOneName=" + p1Name + "&playerTwoName=" + p2Name
-                      }}>
+                        className="button"
+                        to={{
+                            pathname: match.url + "/results",
+                            search: "?playerOneName=" + p1Name + "&playerTwoName=" + p2Name
+                        }}>
                         Battle!
                     </Link>}
-
+                </div>
             </div>
         )
     }

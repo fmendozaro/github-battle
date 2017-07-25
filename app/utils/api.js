@@ -5,10 +5,7 @@ var github_sec = Config.github_sec;
 var params = "&client_id=" + github_id + "&client_secret=" + github_sec;
 
 function getProfile(username) {
-    axios.get("https://api.github.com/users/" + username +"?"+ params)
-        .then(function(user){
-           return user.data;
-        });
+    return axios.get("https://api.github.com/users/" + username +"?"+ params);
 }
 
 function getRepos(username){
@@ -37,6 +34,7 @@ function getUserData(player){
         getProfile(player),
         getRepos(player)
     ]).then(function(data){
+        console.log(data);
         var profile = data[0];
         var repos = data[1];
         return {
@@ -52,10 +50,6 @@ function sortPlayers(players){
     });
 }
 
-getRepos("fmendozaro");
-
-//api.battle(['fmendozaro', 'fer']);
-
 module.exports = {
     fetchPopularRepos: function(language){
         var encodedURI = window.encodeURI('https://api.github.com/search/repositories?q=stars:>1+language:' + language + '&sort=stars&order=desc&type=Repositories' + params);
@@ -65,7 +59,7 @@ module.exports = {
             });
     },
     battle: function (players) {
-        return axios.all(players.map(getUserData()))
+        return axios.all(players.map(getUserData))
             .then(sortPlayers)
     }
 }
