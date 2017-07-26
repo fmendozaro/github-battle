@@ -66,8 +66,6 @@ class Results extends React.Component{
             players.playerTwoName
         ]).then(function (results) {
 
-            console.log(results);
-
             if(results === null){
                 return this.setState(function(){
                     return {
