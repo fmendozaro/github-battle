@@ -2,10 +2,14 @@ var React = require("react");
 var PropTypes = require("prop-types");
 
 var styles = {
-    content:{
+    content: {
         textAlign: "center",
         fontSize: "35px"
+    },
+    pacman: {
+        WebkitTransform: "scale(1)"
     }
+
 }
 
 class Loading extends React.Component{
@@ -27,7 +31,7 @@ class Loading extends React.Component{
                         text: this.props.text
                     }
                 });
-            }else{
+            } else {
                 this.setState(function (previousState) {
                    return {
                        text: previousState.text + "."
@@ -43,9 +47,21 @@ class Loading extends React.Component{
 
     render(){
         return(
-            <p style={styles.content}>
-                {this.state.text}
-            </p>
+            <div id="wrapper">
+                <div id="overlay">
+                    <div id="inner">
+                        <h1>{this.state.text}</h1>
+                        <br/>
+                            <div
+                                className='uil-pacman-css'
+                                style={styles.pacman}>
+                                <div><div></div></div>
+                                <div><div></div></div>
+                                <div><div></div></div>
+                            </div>
+                    </div>
+                </div>
+            </div>
         )
     }
 }
