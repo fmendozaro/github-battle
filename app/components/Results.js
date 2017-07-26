@@ -14,7 +14,7 @@ function Profile(props){
         <PlayerPreview
             avatar={info.avatar_url}
             username={info.login}>
-            <ul className="space-list-items">
+            <ul className="space-list-items results-info">
                 {info.name && <li>{info.name}</li>}
                 {info.location && <li>{info.location}</li>}
                 {info.company && <li>{info.company}</li>}
@@ -35,7 +35,7 @@ function Player(props){
     return(
         <div>
             <h1 className="header">{props.label}</h1>
-            <h3>{props.score}</h3>
+            <h3 style={{textAlign: "center"}}>{props.score}</h3>
             <Profile info={props.profile} />
         </div>
     )
