@@ -15,8 +15,12 @@ var Switch = require("react-router-dom").Switch;
 // Adding an example of a Stateless functional component
 function Welcome(props){
     return (
-        <span>Welcome, {props.username}!</span>
+        <h2>Welcome to the ultimate Github Battle {props.username}</h2>
     )
+}
+
+Welcome.defaultProps = {
+    username: ""
 }
 
 class App extends React.Component{
@@ -24,8 +28,8 @@ class App extends React.Component{
         return (
             <Router>
                 <div className="container">
-                    <Welcome username="Fer" />
                     <Nav />
+                    <Welcome />
                     <Switch>
                         <Route exact path="/" component={Home} />
                         <Route exact path="/battle" component={Battle} />
