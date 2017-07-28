@@ -39,5 +39,5 @@ var getLastCommit = function(username){
         .catch( error => console.error(error));
 }
 
-var responseObj = getLastCommit("fmendozaro");
+getLastCommit("fmendozaro");
 
