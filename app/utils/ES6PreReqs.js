@@ -35,9 +35,10 @@ var getLastCommit = function(username){
             }
         }
     ).then(response => response.json())
-        .then(data => console.log(data[0].created_at))
+        .then(data => console.log("Last commit date: " + data[0].created_at))
         .catch( error => console.error(error));
 }
 
 getLastCommit("fmendozaro");
+
 
