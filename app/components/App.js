@@ -11,7 +11,8 @@ var Home = require("./Home");
 var Battle = require("./Battle");
 var Results = require("./Results");
 var Switch = require("react-router-dom").Switch;
-var Exercises = require("../utils/ES6PreReqs");
+// var Exercises = require("../utils/ES6PreReqs");
+var ES6 = require("../utils/ES6/es6");
 
 // Adding an example of a Stateless functional component
 function Welcome(props){
