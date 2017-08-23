@@ -12,7 +12,7 @@ var Battle = require("./Battle");
 var Results = require("./Results");
 var Switch = require("react-router-dom").Switch;
 // var Exercises = require("../utils/ES6PreReqs");
-var ES6 = require("../utils/ES6/es6");
+var ES6 = require("../utils/ES6/map-filter-reduce");
 
 // Adding an example of a Stateless functional component
 function Welcome(props){
