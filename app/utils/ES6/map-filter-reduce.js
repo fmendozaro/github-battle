@@ -36,12 +36,14 @@ let experiencedUsers = users.filter( (user) =>  user.languages.length >= 3);
 
 console.log(experiencedUsers);
 
+// Map
 let emails = users.map((user) => user.email)
 
 console.log("emails " + emails);
 
-let usersObj = users.reduce((obj, user) => {
-    return {id: user.id, user: user};
-});
+let reducedObj = users.reduce((obj, user) => {
+    obj[user.id] = user;
+    return obj;
+}, {});
 
-console.log(usersObj);
+console.log(reducedObj);

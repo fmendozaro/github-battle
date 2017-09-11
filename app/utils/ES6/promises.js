@@ -1,5 +1,23 @@
 // Promises
 
+
+const myPromise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        let res = Math.random();
+        if (res > 0.5) {
+            resolve({data: res});
+        } else {
+            reject("The number is less than 0.5");
+        }
+    }, 1500);
+});
+
+console.log(myPromise); // a pending promise
+
+myPromise.catch((error) => console.log('rejected!' + error));
+myPromise.then((response) => console.log('resolved!' + response.data));
+
+
 var optionalHeaders = {headers: {'Authorization': 'token YOUR_TOKEN_HERE'}}
 
 function wait(millisecs){
