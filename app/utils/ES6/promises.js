@@ -17,8 +17,7 @@ console.log(myPromise); // a pending promise
 myPromise.catch((error) => console.log('rejected!' + error));
 myPromise.then((response) => console.log('resolved!' + response.data));
 
-
-var optionalHeaders = {headers: {'Authorization': 'token YOUR_TOKEN_HERE'}}
+var optionalHeaders = { headers: {'Authorization': 'token 8c9fbcc85060ee8405d60840639c0bb431acd2fd'} };
 
 function wait(millisecs){
     return new Promise((resolve, reject) => {
@@ -29,7 +28,7 @@ function wait(millisecs){
 }
 
 function getLastCommit(username){
-    return fetch("https://api.github.com/users/"+username+"/events").then((response) => {
+    return fetch("https://api.github.com/users/"+username+"/events", optionalHeaders).then((response) => {
         return response.json();
     }).catch( error => {
         console.log(error);
